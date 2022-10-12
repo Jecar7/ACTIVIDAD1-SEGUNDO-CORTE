@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import Http404
 
@@ -11,7 +12,8 @@ from Apps.clientes.serializers import ClienteSerializer
 
 # Create your views here.
 
-
+def home(request):
+    return HttpResponse("Bienvenidos, Uniguajira!- Aplicación Clientes")
 class ClienteList(APIView):
     """
     Lista de Clientes
@@ -60,8 +62,8 @@ class ClienteDetail(APIView):
     def patch(self, request, pk, format=None):
         cliente = self.get_object(pk)
         serializer = ClienteSerializer(cliente,
-                                           data=request.data,
-                                           partial=True)
+                                        data=request.data,
+                                        partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
