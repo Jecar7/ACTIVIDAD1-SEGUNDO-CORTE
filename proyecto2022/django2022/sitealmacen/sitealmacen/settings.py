@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w-4+70&u^%pe6uuw(6e!m$i2j)%(eo^wzqwu^2z6h&wa96*e7*'
+SECRET_KEY = 'django-insecure-gtw1=-0r+@0(^btr(gwy0zm5_@stm3kuqmqi-ui=a!3ftq!i87'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,8 +40,9 @@ INSTALLED_APPS = [
     'Apps.ventas.apps.VentasConfig',
     'Apps.productos.apps.ProductosConfig',
     'Apps.clientes.apps.ClientesConfig',
-    'rest_framework',
+    'rest_framework'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,10 +80,16 @@ WSGI_APPLICATION = 'sitealmacen.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'almacen2022_mysql',
+        'USER': 'mario',
+        'PASSWORD': '1234Gss+',
+        'HOST': 'localhost',
+        'PORT': '3306'
+
     }
 }
+
 
 
 # Password validation
@@ -109,8 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'es'
-
 TIME_ZONE = 'America/Bogota'
+
 
 USE_I18N = True
 
