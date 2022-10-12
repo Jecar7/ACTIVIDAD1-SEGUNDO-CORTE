@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'almacen2022_mysql',
-        'USER': 'mario',
+        'USER': 'jecar',
         'PASSWORD': '1234Gss+',
         'HOST': 'localhost',
         'PORT': '3306'
