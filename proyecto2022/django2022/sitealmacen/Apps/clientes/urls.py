@@ -6,4 +6,3 @@ urlpatterns = [
     path('', ClienteList.as_view()),
     path('<int:pk>', ClienteDetail.as_view()),
 ]
-#buebas
